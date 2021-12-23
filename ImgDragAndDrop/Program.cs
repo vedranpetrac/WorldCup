@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WorldCupLibrary;
 
-namespace WorldCupWF
+namespace ImgDragAndDrop
 {
     static class Program
     {
@@ -17,10 +16,7 @@ namespace WorldCupWF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
-
-            
-
+            Application.Run(new Form1());
         }
     }
 }

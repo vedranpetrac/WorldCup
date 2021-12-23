@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,22 +47,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="CustomUserControl\FavouritePlayerItemUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomUserControl\FavouritePlayerItemUC.Designer.cs">
+      <DependentUpon>FavouritePlayerItemUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUserControl\FavouritePlayerUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomUserControl\FavouritePlayerUC.Designer.cs">
+      <DependentUpon>FavouritePlayerUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUserControl\FavouriteTeamUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomUserControl\FavouriteTeamUC.Designer.cs">
+      <DependentUpon>FavouriteTeamUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomUserControl\PlayerImgListItemUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomUserControl\PlayerImgListItemUC.Designer.cs">
+      <DependentUpon>PlayerImgListItemUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="InitForm.Designer.cs">
+      <DependentUpon>InitForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="InitialForm.cs">
+    <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InitialForm.Designer.cs">
-      <DependentUpon>InitialForm.cs</DependentUpon>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="CustomUserControl\FavouritePlayerItemUC.resx">
+      <DependentUpon>FavouritePlayerItemUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomUserControl\FavouritePlayerUC.resx">
+      <DependentUpon>FavouritePlayerUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomUserControl\FavouriteTeamUC.resx">
+      <DependentUpon>FavouriteTeamUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomUserControl\PlayerImgListItemUC.resx">
+      <DependentUpon>PlayerImgListItemUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InitForm.resx">
+      <DependentUpon>InitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

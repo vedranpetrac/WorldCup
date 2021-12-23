@@ -12,9 +12,9 @@ using WorldCupLibrary.Models;
 
 namespace WorldCupWF
 {
-    public partial class Form1 : Form
+    public partial class InitForm : Form
     {
-        public Form1()
+        public InitForm()
         {
             InitializeComponent();
             spolddl.Items.Add("zensko");
@@ -50,6 +50,11 @@ namespace WorldCupWF
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
