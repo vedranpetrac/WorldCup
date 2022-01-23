@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WorldCupLibrary;
+using WorldCupLibrary.Dal;
 using WorldCupLibrary.Models;
 
 namespace WorldCupWF
@@ -17,43 +18,36 @@ namespace WorldCupWF
         public InitForm()
         {
             InitializeComponent();
-            spolddl.Items.Add("zensko");
-            spolddl.Items.Add("musko");
-            spolddl.SelectedIndex = 0;
+            InitGenderTypeDdl();
+            InitCultureTypeDdl();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void InitCultureTypeDdl()
         {
-            try
-            {
-
-                FillDdlWithDataAsync();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            ddlCulture.Items.Add("en");
+            ddlCulture.Items.Add("hr");
+            ddlCulture.SelectedIndex = 0;
         }
 
-        private async void FillDdlWithDataAsync()
+        private void InitGenderTypeDdl()
         {
-            var results = await ResultRepositoryFactory.GetMenResult();
-            foreach (var result in results)
-            {
-                ddl_codes.Items.Add(result.Country);
-            }
-
-            // Select the first item
-            ddl_codes.SelectedIndex = 0;
+            ddlGenderType.Items.Add("female");
+            ddlGenderType.Items.Add("male");
+            ddlGenderType.SelectedIndex = 0;
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void btnConfirm_Click(object sender, EventArgs e)
         {
+            DataConfig dataConfig = new DataConfig();
+            if (ddlCulture.SelectedItem.ToString() == "en") dataConfig.Culture = Culture.en;
+            else dataConfig.Culture = Culture.hr;
 
-        }
+            if (ddlGenderType.SelectedIndex == 0) dataConfig.TeamGender = TeamGender.female;
+            else dataConfig.TeamGender = TeamGender.male;
 
-        private void button1_Click(object sender, EventArgs e)
-        {
+            ConfigFactory configFactory = new ConfigFactory();
+            configFactory.SaveDataConfig(dataConfig);
+
             this.Close();
         }
     }

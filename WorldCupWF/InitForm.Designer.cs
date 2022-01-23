@@ -29,57 +29,81 @@ namespace WorldCupWF
         /// </summary>
         private void InitializeComponent()
         {
-            this.ddl_codes = new System.Windows.Forms.ComboBox();
-            this.spolddl = new System.Windows.Forms.ComboBox();
-            this.btn_confirm = new System.Windows.Forms.Button();
+            this.ddlCulture = new System.Windows.Forms.ComboBox();
+            this.ddlGenderType = new System.Windows.Forms.ComboBox();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // ddl_codes
+            // ddlCulture
             // 
-            this.ddl_codes.FormattingEnabled = true;
-            this.ddl_codes.Location = new System.Drawing.Point(66, 102);
-            this.ddl_codes.Name = "ddl_codes";
-            this.ddl_codes.Size = new System.Drawing.Size(312, 21);
-            this.ddl_codes.TabIndex = 1;
+            this.ddlCulture.FormattingEnabled = true;
+            this.ddlCulture.Location = new System.Drawing.Point(66, 115);
+            this.ddlCulture.Name = "ddlCulture";
+            this.ddlCulture.Size = new System.Drawing.Size(312, 21);
+            this.ddlCulture.TabIndex = 1;
             // 
-            // spolddl
+            // ddlGenderType
             // 
-            this.spolddl.FormattingEnabled = true;
-            this.spolddl.Location = new System.Drawing.Point(66, 52);
-            this.spolddl.Name = "spolddl";
-            this.spolddl.Size = new System.Drawing.Size(312, 21);
-            this.spolddl.TabIndex = 2;
+            this.ddlGenderType.FormattingEnabled = true;
+            this.ddlGenderType.Location = new System.Drawing.Point(66, 52);
+            this.ddlGenderType.Name = "ddlGenderType";
+            this.ddlGenderType.Size = new System.Drawing.Size(312, 21);
+            this.ddlGenderType.TabIndex = 2;
             // 
-            // btn_confirm
+            // btnConfirm
             // 
-            this.btn_confirm.Location = new System.Drawing.Point(66, 157);
-            this.btn_confirm.Name = "btn_confirm";
-            this.btn_confirm.Size = new System.Drawing.Size(312, 54);
-            this.btn_confirm.TabIndex = 3;
-            this.btn_confirm.Text = "Confirm Options";
-            this.btn_confirm.UseVisualStyleBackColor = true;
-            this.btn_confirm.Click += new System.EventHandler(this.button1_Click);
+            this.btnConfirm.Location = new System.Drawing.Point(66, 169);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(312, 54);
+            this.btnConfirm.TabIndex = 3;
+            this.btnConfirm.Text = "Confirm Options";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Location = new System.Drawing.Point(63, 27);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(64, 13);
+            this.lblGender.TabIndex = 4;
+            this.lblGender.Text = "Cup Gender";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(63, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Language";
             // 
             // InitForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(434, 261);
-            this.Controls.Add(this.btn_confirm);
-            this.Controls.Add(this.spolddl);
-            this.Controls.Add(this.ddl_codes);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblGender);
+            this.Controls.Add(this.btnConfirm);
+            this.Controls.Add(this.ddlGenderType);
+            this.Controls.Add(this.ddlCulture);
             this.Name = "InitForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.ComboBox ddl_codes;
-        private System.Windows.Forms.ComboBox spolddl;
-        private System.Windows.Forms.Button btn_confirm;
+        private System.Windows.Forms.ComboBox ddlCulture;
+        private System.Windows.Forms.ComboBox ddlGenderType;
+        private System.Windows.Forms.Button btnConfirm;
+        private System.Windows.Forms.Label lblGender;
+        private System.Windows.Forms.Label label1;
     }
 }
 

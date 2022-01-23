@@ -9,13 +9,14 @@ using WorldCupLibrary.Constants;
 using WorldCupLibrary.Models;
 using Newtonsoft.Json.Converters;
 using System.Globalization;
+using WorldCupLibrary.Models.Match;
 
 namespace WorldCupLibrary
 {
     public static class ResultRepositoryFactory
     {
 
-        public static Task<Result> GetWomenResult()
+        public static Task<Match> GetWomenResult()
         {
             return Task.Run(() =>
             {
@@ -25,24 +26,24 @@ namespace WorldCupLibrary
 
         }
 
-        public static Task<List<Result>> GetMenResult()
+        public static Task<List<Match>> GetMenResult()
         {
             return Task.Run(() =>
             {
                 var apiClient = new RestClient(ApiConstants.MEN_RESULTS_ENDPOINT);
-                var apiResult = apiClient.Execute<Result>(new RestRequest());
+                var apiResult = apiClient.Execute<Match>(new RestRequest());
                 string json = apiResult.Content.ToString();
-                return JsonConvert.DeserializeObject<List<Result>>(json, Converter.Settings);
+                return JsonConvert.DeserializeObject<List<Match>>(json, Converter.Settings);
             });
 
             
         }
 
-        static Result GetResultsFromUrl(string url)
+        static Match GetResultsFromUrl(string url)
         {
             var apiClient = new RestClient(url);
-            var apiResult = apiClient.Execute<Result>(new RestRequest());
-            return JsonConvert.DeserializeObject<Result>(apiResult.Content);
+            var apiResult = apiClient.Execute<Match>(new RestRequest());
+            return JsonConvert.DeserializeObject<Match>(apiResult.Content);
         }
     }
 

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WorldCupLibrary.Models
+namespace WorldCupLibrary.Dal.WorldCupDataSource
 {
-    class Match
+    class LocalSource
     {
     }
 }
