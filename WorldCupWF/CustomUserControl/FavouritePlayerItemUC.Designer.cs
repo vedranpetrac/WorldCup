@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.captainCheck = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.favShow = new System.Windows.Forms.PictureBox();
             this.playerNameLbl = new System.Windows.Forms.Label();
             this.playerPosLbl = new System.Windows.Forms.Label();
             this.PlayerNumLbl = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.favShow)).BeginInit();
             this.SuspendLayout();
             // 
             // captainCheck
@@ -47,14 +47,15 @@
             this.captainCheck.Text = "Kapetan";
             this.captainCheck.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // favShow
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Yellow;
-            this.pictureBox1.Location = new System.Drawing.Point(168, 21);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(24, 25);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.favShow.BackColor = System.Drawing.Color.Yellow;
+            this.favShow.Location = new System.Drawing.Point(168, 21);
+            this.favShow.Name = "favShow";
+            this.favShow.Size = new System.Drawing.Size(24, 25);
+            this.favShow.TabIndex = 3;
+            this.favShow.TabStop = false;
+            this.favShow.Visible = false;
             // 
             // playerNameLbl
             // 
@@ -64,7 +65,6 @@
             this.playerNameLbl.Size = new System.Drawing.Size(67, 13);
             this.playerNameLbl.TabIndex = 5;
             this.playerNameLbl.Text = "Player Name";
-            this.playerNameLbl.Click += new System.EventHandler(this.label1_Click);
             // 
             // playerPosLbl
             // 
@@ -93,13 +93,13 @@
             this.Controls.Add(this.PlayerNumLbl);
             this.Controls.Add(this.playerPosLbl);
             this.Controls.Add(this.playerNameLbl);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.favShow);
             this.Controls.Add(this.captainCheck);
             this.Name = "FavouritePlayerItemUC";
             this.Size = new System.Drawing.Size(231, 116);
-            this.Load += new System.EventHandler(this.FavouritePlayerItemUC_Load);
             this.Click += new System.EventHandler(this.FavouritePlayerItemUC_Click);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FavouritePlayerItemUC_MouseDown);
+            ((System.ComponentModel.ISupportInitialize)(this.favShow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -107,7 +107,7 @@
 
         #endregion
         private System.Windows.Forms.CheckBox captainCheck;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox favShow;
         private System.Windows.Forms.Label playerNameLbl;
         private System.Windows.Forms.Label playerPosLbl;
         private System.Windows.Forms.Label PlayerNumLbl;

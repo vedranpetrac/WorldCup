@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WorldCupLibrary.Models;
 using WorldCupLibrary.Models.Match;
+using WorldCupLibrary.Models.Nation;
 
 namespace WorldCupLibrary.Dal
 {
@@ -34,15 +35,20 @@ namespace WorldCupLibrary.Dal
         {
                 IFormatter formatter = new BinaryFormatter();
                 Stream stream = new FileStream(DIR + FILE, FileMode.Open, FileAccess.Read);
-                stream.Close();
                 DataConfig dataConfig = new DataConfig();
                 dataConfig = (DataConfig)formatter.Deserialize(stream);
+                stream.Close();
                 return dataConfig;         
         }
 
-        public Task<StartingEleven> LoadPlayers(string nationCode)
+        public Nation LoadFavNation()
         {
-            throw new NotImplementedException();
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(DIR + FILE, FileMode.Open, FileAccess.Read);
+            Nation nation = new Nation();
+            nation = (Nation)formatter.Deserialize(stream);
+            stream.Close();
+            return nation;
         }
 
         public void SaveDataConfig(DataConfig dataConfig)
@@ -56,14 +62,14 @@ namespace WorldCupLibrary.Dal
 
         }
 
-        public void SavePlayers(StartingEleven players)
+        public void SaveFavNation(Nation nation)
         {
             
             
                 IFormatter formatter = new BinaryFormatter();
                 Stream stream = new FileStream(DIR + FILE, FileMode.Create, FileAccess.Write);
 
-                formatter.Serialize(stream, players);
+                formatter.Serialize(stream, nation);
                 stream.Close();
            
         }

@@ -20,24 +20,20 @@ namespace WorldCupWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Window1 window;
+       
 
         public MainWindow()
         {
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-
-            window = new Window1();
-            window.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            window.Topmost = true;
-            this.LocationChanged += OnLocationchanged;
-            window.Show();
+            InitWindow initWindow = new InitWindow();
+            initWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            initWindow.Topmost = true;
+            initWindow.ShowDialog();
+            
+            
         }
 
-        private void OnLocationchanged(object sender, EventArgs e)
-        {
-            if (window != null)
-                window.Close();
-        }
+        
     }
 }

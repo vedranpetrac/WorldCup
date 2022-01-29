@@ -15,6 +15,7 @@ namespace WorldCupLibrary.Models.Nation
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
 
+    [Serializable]
     public partial class Nation
     {
         [JsonProperty("id")]

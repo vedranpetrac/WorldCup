@@ -33,20 +33,35 @@ namespace WorldCupLibrary.Dal.WorldCupDataSource
             return Task.Run(() =>
             {
                 RestClient apiClient;
-                if (teamGenderType == TeamGender.female) apiClient = new RestClient(ApiConstants.WOMEN_RESULTS_ENDPOINT);
-                    
-                else apiClient = new RestClient(ApiConstants.MEN_RESULTS_ENDPOINT);
-
+                if (teamGenderType == TeamGender.female) { 
+                    apiClient = new RestClient(ApiConstants.WOMEN_RESULTS_ENDPOINT); 
+                }
+                else { 
+                    apiClient = new RestClient(ApiConstants.MEN_RESULTS_ENDPOINT); 
+                }
                 var apiResult = apiClient.Execute<Nation>(new RestRequest());
-                string json = apiResult.Content.ToString();
-                return JsonConvert.DeserializeObject<List<Nation>>(json, Converter.Settings);
+                return JsonConvert.DeserializeObject<List<Nation>>(apiResult.Content);
                 
             });
         }
 
         public Task<List<Match>> GetMatches(Nation nation, TeamGender teamGenderType)
         {
-            throw new NotImplementedException();
+            return Task.Run(() =>
+            {
+                RestClient apiClient;
+                if (teamGenderType == TeamGender.female)
+                {
+                    apiClient = new RestClient(ApiConstants.WOMEN_MATCH_ENDPOINT + nation.FifaCode);
+                }
+                else
+                {
+                    apiClient = new RestClient(ApiConstants.MEN_MATCH_ENDPOINT + nation.FifaCode);
+                }
+                var apiResult = apiClient.Execute<Match>(new RestRequest());
+                return JsonConvert.DeserializeObject<List<Match>>(apiResult.Content);
+
+            });
         }
 
    

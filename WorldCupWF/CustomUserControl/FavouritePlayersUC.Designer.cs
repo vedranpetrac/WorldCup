@@ -1,6 +1,6 @@
 ﻿namespace WorldCupWF.CustomUserControl
 {
-    partial class FavouritePlayerUC
+    partial class FavouritePlayersUC
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,23 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.playerListPanel = new System.Windows.Forms.Panel();
             this.PlayerFavListPanel = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.playerListPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
-            // 
-            // playerListPanel
-            // 
-            this.playerListPanel.Location = new System.Drawing.Point(49, 36);
-            this.playerListPanel.Name = "playerListPanel";
-            this.playerListPanel.Size = new System.Drawing.Size(200, 312);
-            this.playerListPanel.TabIndex = 0;
             // 
             // PlayerFavListPanel
             // 
-            this.PlayerFavListPanel.Location = new System.Drawing.Point(472, 36);
+            this.PlayerFavListPanel.Location = new System.Drawing.Point(444, 3);
             this.PlayerFavListPanel.Name = "PlayerFavListPanel";
-            this.PlayerFavListPanel.Size = new System.Drawing.Size(200, 312);
+            this.PlayerFavListPanel.Size = new System.Drawing.Size(292, 393);
             this.PlayerFavListPanel.TabIndex = 1;
             // 
             // button1
@@ -56,14 +50,36 @@
             this.button1.Text = "Move To Fav";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // FavouritePlayerUC
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(312, 188);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(114, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Remove from fav";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // playerListPanel
+            // 
+            this.playerListPanel.AllowDrop = true;
+            this.playerListPanel.AutoScroll = true;
+            this.playerListPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.playerListPanel.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.playerListPanel.Location = new System.Drawing.Point(3, 3);
+            this.playerListPanel.Name = "playerListPanel";
+            this.playerListPanel.Size = new System.Drawing.Size(287, 396);
+            this.playerListPanel.TabIndex = 4;
+            // 
+            // FavouritePlayersUC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.playerListPanel);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.PlayerFavListPanel);
-            this.Controls.Add(this.playerListPanel);
-            this.Name = "FavouritePlayerUC";
+            this.Name = "FavouritePlayersUC";
             this.Size = new System.Drawing.Size(739, 399);
             this.ResumeLayout(false);
 
@@ -72,6 +88,7 @@
         #endregion
         private System.Windows.Forms.Panel PlayerFavListPanel;
         private System.Windows.Forms.Button button1;
-        public System.Windows.Forms.Panel playerListPanel;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.FlowLayoutPanel playerListPanel;
     }
 }

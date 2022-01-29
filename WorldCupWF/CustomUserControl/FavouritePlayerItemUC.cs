@@ -7,40 +7,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WorldCupLibrary.Models.Match;
 using WorldCupWF.Model;
 
 namespace WorldCupWF.CustomUserControl
 {
     public partial class FavouritePlayerItemUC : UserControl
     {
-        public FavouritePlayerItemUC()
-        {
-            InitializeComponent();
+   
 
-        }
-
-        public FavouritePlayerItemUC(Player player)
+        public FavouritePlayerItemUC(StartingEleven player)
         {
 
         InitializeComponent();
 
-            playerNameLbl.Text = player.FullName;
-            PlayerNumLbl.Text = player.Number;
-            playerPosLbl.Text = player.Position;
+            playerNameLbl.Text = player.Name;
+            PlayerNumLbl.Text = player.ShirtNumber.ToString();
+            playerPosLbl.Text = player.Position.ToString();
+            if (player.Captain)
+            {
+                captainCheck.Checked = true;
+            }
+
+            favShow.Visible = player.Favourite;
+            
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+      
 
-        }
-
-        private void FavouritePlayerItemUC_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void FavouritePlayerItemUC_Click(object sender, EventArgs e)
+        {
+            this.BackColor = Color.AliceBlue;
+        }
+
+        private void FavouritePlayerItemUC_MouseDown(object sender, MouseEventArgs e)
         {
             this.BackColor = Color.AliceBlue;
         }

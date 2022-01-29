@@ -54,9 +54,14 @@
     <StartupObject>WorldCupWF.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="RestSharp, Version=106.13.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.106.13.0\lib\net452\RestSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,29 +73,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiConstants.cs" />
     <Compile Include="CustomUserControl\FavouritePlayerItemUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CustomUserControl\FavouritePlayerItemUC.Designer.cs">
       <DependentUpon>FavouritePlayerItemUC.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomUserControl\FavouritePlayerUC.cs">
+    <Compile Include="CustomUserControl\FavouritePlayersUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CustomUserControl\FavouritePlayerUC.Designer.cs">
-      <DependentUpon>FavouritePlayerUC.cs</DependentUpon>
+    <Compile Include="CustomUserControl\FavouritePlayersUC.Designer.cs">
+      <DependentUpon>FavouritePlayersUC.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomUserControl\FavouriteTeamUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="CustomUserControl\FavouriteTeamUC.Designer.cs">
       <DependentUpon>FavouriteTeamUC.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomUserControl\PlayerImgListItemUC.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="CustomUserControl\PlayerImgListItemUC.Designer.cs">
-      <DependentUpon>PlayerImgListItemUC.cs</DependentUpon>
     </Compile>
     <Compile Include="InitForm.cs">
       <SubType>Form</SubType>
@@ -104,20 +104,17 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\Player.cs" />
+    <Compile Include="Model\DataGridMatchesPrint.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CustomUserControl\FavouritePlayerItemUC.resx">
       <DependentUpon>FavouritePlayerItemUC.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomUserControl\FavouritePlayerUC.resx">
-      <DependentUpon>FavouritePlayerUC.cs</DependentUpon>
+    <EmbeddedResource Include="CustomUserControl\FavouritePlayersUC.resx">
+      <DependentUpon>FavouritePlayersUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomUserControl\FavouriteTeamUC.resx">
       <DependentUpon>FavouriteTeamUC.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomUserControl\PlayerImgListItemUC.resx">
-      <DependentUpon>PlayerImgListItemUC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InitForm.resx">
       <DependentUpon>InitForm.cs</DependentUpon>
@@ -133,8 +130,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="app.manifest" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\WorldCupLibrary.Models.Match.StartingEleven.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -165,6 +165,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\blank-profile-picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\player.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

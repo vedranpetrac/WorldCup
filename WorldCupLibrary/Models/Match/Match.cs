@@ -30,11 +30,11 @@ namespace WorldCupLibrary.Models.Match
         public string Time { get; set; }
 
         [JsonProperty("fifa_id")]
-        [JsonConverter(typeof(ParseStringConverter))]
+        //[JsonConverter(typeof(ParseStringConverter))]
         public long FifaId { get; set; }
 
         [JsonProperty("attendance")]
-        [JsonConverter(typeof(ParseStringConverter))]
+        //[JsonConverter(typeof(ParseStringConverter))]
         public long Attendance { get; set; }
 
         [JsonProperty("stage_name")]
@@ -115,8 +115,8 @@ namespace WorldCupLibrary.Models.Match
         [JsonProperty("country")]
         public string Country { get; set; }
 
-        [JsonProperty("yellow_cards")]
-        public long YellowCards { get; set; }
+        [JsonProperty("yellow_cards")] //long
+        public string YellowCards { get; set; }
 
         [JsonProperty("tactics")]
         public string Tactics { get; set; }
@@ -143,6 +143,7 @@ namespace WorldCupLibrary.Models.Match
         public Position Position { get; set; }
 
         public string PicturePath { get; set; }
+        public bool Favourite { get; set; }
     }
 
     public enum Position { Defender, Forward, Goalie, Midfield };

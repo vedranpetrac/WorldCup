@@ -7,8 +7,9 @@ using WorldCupLibrary.Dal.WorldCupDataSource;
 
 namespace WorldCupLibrary.Dal
 {
-    public class WorldCupDataFactory
+    public static class WorldCupDataFactory
     {
-        public static IRepoWorldCupData RepoWorldCupData => new OnlineSource();
+       
+        public static IRepoWorldCupData GetData => new OnlineSource();
     }
 }
