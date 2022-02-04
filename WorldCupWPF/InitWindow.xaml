@@ -5,26 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorldCupWPF"
         mc:Ignorable="d"
-        Title="InitWindow" Height="200" Width="400" WindowStyle="None">
-    <StackPanel Margin="10" MaxWidth="250">
-        <ComboBox Margin="10">
-            <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
-            <ComboBoxItem IsSelected="True">ComboBox Item #2</ComboBoxItem>
-            <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
+        Title="InitWindow" Height="300" Width="400" WindowStyle="None"
+        Loaded="Window_Loaded"
+        >
+    <StackPanel Margin="10" MaxWidth="250" VerticalAlignment="Center">
+        <Label Margin="10,0">Gender</Label>
+        <ComboBox x:Name="cbGenderType" Margin="10" SelectionChanged="cbGenderType_SelectionChanged">
         </ComboBox>
-        <ComboBox Margin="10">
-            <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
-            <ComboBoxItem IsSelected="True">ComboBox Item #2</ComboBoxItem>
-            <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
+        <Label Margin="10,0" Content="Language"/>
+        <ComboBox Margin="10" x:Name="cbLanguage" SelectionChanged="cbLanguage_SelectionChanged">
         </ComboBox>
-        <ComboBox Margin="10">
-            <ComboBoxItem>ComboBox Item #1</ComboBoxItem>
-            <ComboBoxItem IsSelected="True">ComboBox Item #2</ComboBoxItem>
-            <ComboBoxItem>ComboBox Item #3</ComboBoxItem>
+        <Label Margin="10,0">Resolution</Label>
+        <ComboBox Margin="10" x:Name="cbResolution" SelectionChanged="cbResolution_SelectionChanged">
+            
         </ComboBox>
         <WrapPanel Margin="15" HorizontalAlignment="Center">
-            <Button Name="btnNext"  Margin="0,0,20,0" Width="55">Cancel</Button>
-            <Button Name="btnBlue"  Width="85">Confirm</Button>
+            <Button Name="btnCancel"  Margin="0,0,20,0" Width="55">Exit</Button>
+            <Button Name="btnConfirm" Click="btnConfirm_Click"  Width="85">Confirm</Button>
         </WrapPanel>
     </StackPanel>
 </Window>

@@ -18,6 +18,7 @@ namespace WorldCupLibrary.Dal
     {
         private string DIR = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
         private string FILE = @"\config.txt";
+        private string FILE_NATION = @"\favconfig.txt";
 
 
         public bool CheckDataConfig()
@@ -44,7 +45,7 @@ namespace WorldCupLibrary.Dal
         public Nation LoadFavNation()
         {
             IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(DIR + FILE, FileMode.Open, FileAccess.Read);
+            Stream stream = new FileStream(DIR + FILE_NATION, FileMode.Open, FileAccess.Read);
             Nation nation = new Nation();
             nation = (Nation)formatter.Deserialize(stream);
             stream.Close();
@@ -67,7 +68,7 @@ namespace WorldCupLibrary.Dal
             
             
                 IFormatter formatter = new BinaryFormatter();
-                Stream stream = new FileStream(DIR + FILE, FileMode.Create, FileAccess.Write);
+                Stream stream = new FileStream(DIR + FILE_NATION, FileMode.Create, FileAccess.Write);
 
                 formatter.Serialize(stream, nation);
                 stream.Close();

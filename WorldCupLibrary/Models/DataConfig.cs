@@ -18,7 +18,7 @@ namespace WorldCupLibrary.Models
     }
     [Serializable]
     public class DataConfig
-    {   
+    {
 
         public Culture Culture { get; set; }
      

@@ -147,6 +147,7 @@ namespace WorldCupWF
                 selectedNation = nations[cbNations.SelectedIndex];
                 configFactory.SaveFavNation(selectedNation);
                 lbLoadingNations.Text = "Favourite nation saved.";
+                configFactory.SaveFavNation(selectedNation);
                 initNationMatchesAsync(dataConfig.TeamGender, selectedNation);
 
 
