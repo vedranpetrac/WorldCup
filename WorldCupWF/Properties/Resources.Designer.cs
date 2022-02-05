@@ -61,12 +61,471 @@ namespace WorldCupWF.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Add image.
+        /// </summary>
+        internal static string Add_image {
+            get {
+                return ResourceManager.GetString("Add image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Apply initial settings.
+        /// </summary>
+        internal static string Apply_initial_settings {
+            get {
+                return ResourceManager.GetString("Apply initial settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Apply settings.
+        /// </summary>
+        internal static string Apply_settings {
+            get {
+                return ResourceManager.GetString("Apply settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Attendance statistics.
+        /// </summary>
+        internal static string Attendance_statistics {
+            get {
+                return ResourceManager.GetString("Attendance statistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Away team.
+        /// </summary>
+        internal static string Away_team {
+            get {
+                return ResourceManager.GetString("Away team", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap blank_profile_picture {
             get {
                 object obj = ResourceManager.GetObject("blank-profile-picture", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancel.
+        /// </summary>
+        internal static string Cancel {
+            get {
+                return ResourceManager.GetString("Cancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose a favourite country.
+        /// </summary>
+        internal static string Choose_a_favourite_country {
+            get {
+                return ResourceManager.GetString("Choose a favourite country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose a language:.
+        /// </summary>
+        internal static string Choose_a_language_ {
+            get {
+                return ResourceManager.GetString("Choose a language:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Choose a tournament:.
+        /// </summary>
+        internal static string Choose_a_tournament_ {
+            get {
+                return ResourceManager.GetString("Choose a tournament:", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Closing.
+        /// </summary>
+        internal static string Closing {
+            get {
+                return ResourceManager.GetString("Closing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm settings.
+        /// </summary>
+        internal static string Confirm_settings {
+            get {
+                return ResourceManager.GetString("Confirm settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure?.
+        /// </summary>
+        internal static string ConfirmDialogContent {
+            get {
+                return ResourceManager.GetString("ConfirmDialogContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Croatian.
+        /// </summary>
+        internal static string Croatian {
+            get {
+                return ResourceManager.GetString("Croatian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Defender.
+        /// </summary>
+        internal static string Defender {
+            get {
+                return ResourceManager.GetString("Defender", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to English.
+        /// </summary>
+        internal static string English {
+            get {
+                return ResourceManager.GetString("English", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error loading player data!.
+        /// </summary>
+        internal static string Error_loading_player_ {
+            get {
+                return ResourceManager.GetString("Error loading player!", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error while saving data!.
+        /// </summary>
+        internal static string Error_saving_data_ {
+            get {
+                return ResourceManager.GetString("Error saving data!", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Favourite players.
+        /// </summary>
+        internal static string Favourite_players {
+            get {
+                return ResourceManager.GetString("Favourite players", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Female.
+        /// </summary>
+        internal static string Female {
+            get {
+                return ResourceManager.GetString("Female", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Forward.
+        /// </summary>
+        internal static string Forward {
+            get {
+                return ResourceManager.GetString("Forward", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Getting data....
+        /// </summary>
+        internal static string Getting_data___ {
+            get {
+                return ResourceManager.GetString("Getting data...", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Goalkeeper.
+        /// </summary>
+        internal static string Goalkeeper {
+            get {
+                return ResourceManager.GetString("Goalkeeper", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Goals.
+        /// </summary>
+        internal static string Goals {
+            get {
+                return ResourceManager.GetString("Goals", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home team.
+        /// </summary>
+        internal static string Home_team {
+            get {
+                return ResourceManager.GetString("Home team", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I&apos;m loading data....
+        /// </summary>
+        internal static string I_m_loading_data___ {
+            get {
+                return ResourceManager.GetString("I\'m loading data...", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Images|*.jpeg;*.jpg;*.png;|All files|*.*.
+        /// </summary>
+        internal static string ImageFormat {
+            get {
+                return ResourceManager.GetString("ImageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Initial settings.
+        /// </summary>
+        internal static string Initial_settings {
+            get {
+                return ResourceManager.GetString("Initial settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Max 3 favourite players.
+        /// </summary>
+        internal static string LimitPlayers {
+            get {
+                return ResourceManager.GetString("LimitPlayers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Load image....
+        /// </summary>
+        internal static string Load_image___ {
+            get {
+                return ResourceManager.GetString("Load image...", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Loading data....
+        /// </summary>
+        internal static string Loading_data___ {
+            get {
+                return ResourceManager.GetString("Loading data...", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Location.
+        /// </summary>
+        internal static string Location {
+            get {
+                return ResourceManager.GetString("Location", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Male.
+        /// </summary>
+        internal static string Male {
+            get {
+                return ResourceManager.GetString("Male", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Midfielder.
+        /// </summary>
+        internal static string Midfielder {
+            get {
+                return ResourceManager.GetString("Midfielder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Move.
+        /// </summary>
+        internal static string Move {
+            get {
+                return ResourceManager.GetString("Move", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Name.
+        /// </summary>
+        internal static string Name {
+            get {
+                return ResourceManager.GetString("Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string OdabirOmiljenihPostavke {
+            get {
+                return ResourceManager.GetString("OdabirOmiljenihPostavke", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string OK {
+            get {
+                return ResourceManager.GetString("OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Other players.
+        /// </summary>
+        internal static string Other_players {
+            get {
+                return ResourceManager.GetString("Other players", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player statistics.
+        /// </summary>
+        internal static string Player_statistics {
+            get {
+                return ResourceManager.GetString("Player statistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Player statistics.
+        /// </summary>
+        internal static string PlayerStatistics {
+            get {
+                return ResourceManager.GetString("PlayerStatistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please restart the application.
+        /// </summary>
+        internal static string Please_restart_the_application {
+            get {
+                return ResourceManager.GetString("Please restart the application", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print.
+        /// </summary>
+        internal static string Print {
+            get {
+                return ResourceManager.GetString("Print", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selection of country.
+        /// </summary>
+        internal static string Selection_of_country {
+            get {
+                return ResourceManager.GetString("Selection of country", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Selection of favourite players.
+        /// </summary>
+        internal static string Selection_of_favourite_players {
+            get {
+                return ResourceManager.GetString("Selection of favourite players", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        internal static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Statistics...
+        /// </summary>
+        internal static string Statistics__ {
+            get {
+                return ResourceManager.GetString("Statistics..", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Printing is finished!.
+        /// </summary>
+        internal static string StatistikaIgracaPrintanje {
+            get {
+                return ResourceManager.GetString("StatistikaIgracaPrintanje", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Image.
+        /// </summary>
+        internal static string StatistikaIgracaSlika {
+            get {
+                return ResourceManager.GetString("StatistikaIgracaSlika", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Visitors.
+        /// </summary>
+        internal static string Visitors {
+            get {
+                return ResourceManager.GetString("Visitors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yellow cards.
+        /// </summary>
+        internal static string YellowCards {
+            get {
+                return ResourceManager.GetString("YellowCards", resourceCulture);
             }
         }
     }

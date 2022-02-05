@@ -10,19 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WorldCupLibrary.Models.Match;
 
 namespace WorldCupWPF
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for PlayerGridItem.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class PlayerGridItem : UserControl
     {
-        public Window1()
+        public StartingEleven PlayerSingle { get; set; }
+        public PlayerGridItem(StartingEleven playerSingle)
         {
             InitializeComponent();
-            
+            lblPlayerName.Text = playerSingle.Name;
+            lblPlayerNum.Text = playerSingle.ShirtNumber.ToString();
         }
     }
 }

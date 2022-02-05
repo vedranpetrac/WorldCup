@@ -46,7 +46,7 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
@@ -60,6 +60,7 @@
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +69,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +87,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +112,148 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Captain" xml:space="preserve">
+    <value>CAPTAIN:</value>
+  </data>
+  <data name="captainNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="captainYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="ChooseGender" xml:space="preserve">
+    <value>Choose Gender</value>
+  </data>
+  <data name="ChooseLang" xml:space="preserve">
+    <value>Choose language</value>
+  </data>
+  <data name="CloseAppConfContent" xml:space="preserve">
+    <value>Are you sure?</value>
+  </data>
+  <data name="Confirm" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="ConfirmSettings" xml:space="preserve">
+    <value>Open the application</value>
+  </data>
+  <data name="Defeats" xml:space="preserve">
+    <value>DEFEATS:</value>
+  </data>
+  <data name="Defender" xml:space="preserve">
+    <value>Defender</value>
+  </data>
+  <data name="Draws" xml:space="preserve">
+    <value>DRAWS:</value>
+  </data>
+  <data name="ErrorDataFetch" xml:space="preserve">
+    <value>Error while fetching data</value>
+  </data>
+  <data name="FavouriteTeam" xml:space="preserve">
+    <value>Favourite team:</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>Female</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="field" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Images\field.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FifaCode" xml:space="preserve">
+    <value>FIFA CODE:</value>
+  </data>
+  <data name="Forward" xml:space="preserve">
+    <value>Forward</value>
+  </data>
+  <data name="Fullscreen" xml:space="preserve">
+    <value>Fullscreen</value>
+  </data>
+  <data name="GamesPlayed" xml:space="preserve">
+    <value>GAMES PLAYED:</value>
+  </data>
+  <data name="GoalDiff" xml:space="preserve">
+    <value>GOAL DIFFERENCE:</value>
+  </data>
+  <data name="Goalie" xml:space="preserve">
+    <value>Goalie</value>
+  </data>
+  <data name="Goals" xml:space="preserve">
+    <value>GOALS:</value>
+  </data>
+  <data name="GoalsAgainst" xml:space="preserve">
+    <value>GOALS AGAINST:</value>
+  </data>
+  <data name="GoalsFor" xml:space="preserve">
+    <value>GOALS FOR:</value>
+  </data>
+  <data name="InitialSettings" xml:space="preserve">
+    <value>Initial settings</value>
+  </data>
+  <data name="langCro" xml:space="preserve">
+    <value>Croatian</value>
+  </data>
+  <data name="langEn" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Loading content...</value>
+  </data>
+  <data name="male" xml:space="preserve">
+    <value>Male</value>
+  </data>
+  <data name="Midfield" xml:space="preserve">
+    <value>Midfield</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>NAME:</value>
+  </data>
+  <data name="NationStat" xml:space="preserve">
+    <value>Country statistics</value>
+  </data>
+  <data name="Opponet" xml:space="preserve">
+    <value>Opponent</value>
+  </data>
+  <data name="PlayerStat" xml:space="preserve">
+    <value>Player statistics</value>
+  </data>
+  <data name="Position" xml:space="preserve">
+    <value>POSITION:</value>
+  </data>
+  <data name="ResLarge" xml:space="preserve">
+    <value>Large</value>
+  </data>
+  <data name="ResMedium" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="ResSmall" xml:space="preserve">
+    <value>Small</value>
+  </data>
+  <data name="SaveSettings" xml:space="preserve">
+    <value>Save settings</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="ShirtNumber" xml:space="preserve">
+    <value>SHIRT NUMBER:</value>
+  </data>
+  <data name="ShowMain" xml:space="preserve">
+    <value>Show main window</value>
+  </data>
+  <data name="TeamDisplay" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="Wins" xml:space="preserve">
+    <value>WINS:</value>
+  </data>
+  <data name="YellowCard" xml:space="preserve">
+    <value>YELLOW CARDS:</value>
+  </data>
 </root>

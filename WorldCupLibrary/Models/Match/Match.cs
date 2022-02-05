@@ -73,11 +73,7 @@ namespace WorldCupLibrary.Models.Match
         [JsonProperty("away_team_statistics")]
         public TeamStatistics AwayTeamStatistics { get; set; }
 
-        [JsonProperty("last_event_update_at")]
-        public DateTimeOffset LastEventUpdateAt { get; set; }
-
-        [JsonProperty("last_score_update_at")]
-        public DateTimeOffset LastScoreUpdateAt { get; set; }
+       
     }
 
     public partial class Team
@@ -140,7 +136,7 @@ namespace WorldCupLibrary.Models.Match
         public long ShirtNumber { get; set; }
 
         [JsonProperty("position")]
-        public Position Position { get; set; }
+        public string Position { get; set; }
 
         public string PicturePath { get; set; }
         public bool Favourite { get; set; }

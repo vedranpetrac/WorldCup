@@ -5,34 +5,148 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorldCupWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
+
+        xmlns:lang="clr-namespace:WorldCupWPF.Properties"
+        Title="MainWindow" Height="600" Width="800"
         Loaded="Window_Loaded"
         >
-	<Grid>
-		<Menu VerticalAlignment="Top">
-			<Button Name="Options" Content="Options"  Uid="btnOptions"/>
-			<Button Name="Exit" Content="Exit"   Uid="btnExit"/>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
-		</Menu>
-		
-		<TabControl>
-			<TabItem Header="Results">
-                <StackPanel VerticalAlignment="Center">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
 
-                    <ComboBox MaxWidth="200" Margin="0,10" Name="cbNation" SelectionChanged="cbNation_SelectionChanged"></ComboBox>
-                    <ComboBox MaxWidth="200" Margin="0,10" Name="cbNationOppon" SelectionChanged="cbNationOppon_SelectionChanged"></ComboBox>
-                    <Label x:Name="lblNationRes">0</Label>
-                    <Label x:Name="lblOppnNationRes">0</Label>
-                    <Button x:Name="btnShowNationDetails" Click="btnShowNationDetails_Click">Show</Button>
-                    <Button x:Name="btnShowOpponNationDetails" Click="btnShowOpponNationDetails_Click">Show</Button>
-                </StackPanel>
-            </TabItem>
-			<TabItem Header="TabItem" HorizontalAlignment="Right" Margin="0,-2,-2,0" Width="58">
-				<Grid Background="#FFE5E5E5"/>
-			</TabItem>
-		</TabControl>
 
-		
+        <Menu VerticalAlignment="Top"
+              Grid.Row="0"
+            Grid.ColumnSpan="3">
+            <MenuItem Header="{x:Static lang:Resources.Settings}" Click="MenuItem_Click"></MenuItem>
+            
+            
 
-	</Grid>
+        </Menu>
+        
+        <Grid
+            Grid.Row="1"
+            Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label 
+            Content="Favourite Team"
+            Grid.ColumnSpan="3"
+            VerticalAlignment="Top"/>
+
+            <Label 
+            Content="Oppon team"
+            Grid.Column="4"
+            Grid.ColumnSpan="3"
+            VerticalAlignment="Top"/>
+
+        </Grid>
+
+        <Grid
+            Grid.Row="2"
+            Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <ComboBox Grid.ColumnSpan="2" Name="cbNation" SelectionChanged="cbNation_SelectionChanged"></ComboBox>
+            <Button Grid.Column="2" x:Name="btnShowNationDetails" Click="btnShowNationDetails_Click">?</Button>
+            <ComboBox Grid.Column="4" Grid.ColumnSpan="2" Name="cbNationOppon" SelectionChanged="cbNationOppon_SelectionChanged"></ComboBox>
+            <Button  Grid.Column="6" x:Name="btnShowOpponNationDetails" Click="btnShowOpponNationDetails_Click">?</Button>
+        </Grid>
+        <Grid
+            Grid.Row="5"
+            Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label 
+            x:Name="lblNationRes"
+            Content="X"
+            Grid.Column="2"
+            VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Label Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center">-</Label>
+
+            <Label 
+            x:Name="lblOppnNationRes"
+            Content="X"
+            Grid.Column="4"
+            VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+        </Grid>
+
+
+        <!--pozadinski grid-->
+        <Grid
+            x:Name="footballFieldBg"
+            Grid.Row="6"
+            Grid.Column="1">
+
+            <Grid.Background>
+                <ImageBrush ImageSource="Images/field.png" />
+            </Grid.Background>
+
+        </Grid>
+
+        <!--prednji grid-->
+        <Grid
+            x:Name="footballFieldGrid"
+            Grid.Row="6"
+            Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+        </Grid>
+
+    </Grid>
 </Window>

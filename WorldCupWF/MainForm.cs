@@ -15,6 +15,7 @@ using WorldCupLibrary.Models.Match;
 using WorldCupLibrary.Models.Nation;
 using WorldCupWF.CustomUserControl;
 using WorldCupWF.Model;
+using WorldCupWF.Properties;
 
 namespace WorldCupWF
 {
@@ -241,6 +242,7 @@ namespace WorldCupWF
                     else
                     {
                         dataGridPlayers.Rows.Add(player.PicturePath, player.Name);
+                        
                     }
 
                 }
