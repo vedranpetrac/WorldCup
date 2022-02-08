@@ -4,16 +4,35 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WorldCupWPF"
+        xmlns:lang="clr-namespace:WorldCupWPF.Properties"
         mc:Ignorable="d"
-        Title="NationDetailsWindow" Height="450" Width="800">
-    <StackPanel>
-        <Label>Naziv</Label>
-        <Label x:Name="lblName"></Label>
-        <Label>Fifa code</Label>
-        <Label x:Name="lblCode"></Label>
-        <Label>Broj odigranih/pobjeda/poraza/neodlučenih</Label>
-        <Label x:Name="lblPlayed"></Label>
-        <Label>Golova zabijenih/primljenih/razlika</Label>
-        <Label x:Name="lblGoals"></Label>
+        Title="NationDetailsWindow" Height="260" Width="300"
+        >
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Window.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="dataWrapper"
+                                     Storyboard.TargetProperty="Opacity"
+                                     From="0"
+                                     To="1"
+                                     Duration="0:0:0.5"
+                                     RepeatBehavior="3x"
+                                     AutoReverse="False" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    
+    <StackPanel x:Name="dataWrapper" Background="Green">
+        <Label FontSize="14" HorizontalAlignment="Center" Content="{x:Static lang:Resources.Name}"></Label>
+        <Label FontWeight="DemiBold" HorizontalAlignment="Center" x:Name="lblName"></Label>
+        <Label HorizontalAlignment="Center" Content="{x:Static lang:Resources.Fifa_code}"></Label>
+        <Label FontWeight="DemiBold" HorizontalAlignment="Center" x:Name="lblCode"></Label>
+        <Label HorizontalAlignment="Center" Content="{x:Static lang:Resources.Number_of_played_wins_lost_even}"></Label>
+        <Label FontWeight="DemiBold" HorizontalAlignment="Center" x:Name="lblPlayed"></Label>
+        <Label HorizontalAlignment="Center" Content="{x:Static lang:Resources.Goals_hit_get_diffrence}"></Label>
+        <Label FontWeight="DemiBold" HorizontalAlignment="Center" x:Name="lblGoals"></Label>
     </StackPanel>
 </Window>

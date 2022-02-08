@@ -7,19 +7,19 @@
         xmlns:lang="clr-namespace:WorldCupWPF.Properties"
         mc:Ignorable="d"
         Title="InitWindow" Height="300" Width="400" WindowStyle="None"
-        Loaded="Window_Loaded"
+        
         >
     <StackPanel Margin="10" MaxWidth="250" VerticalAlignment="Center">
         <Label Margin="10,0" Content="{x:Static lang:Resources.ChooseGender}"></Label>
-        <ComboBox x:Name="cbGenderType" Margin="10" SelectionChanged="cbGenderType_SelectionChanged">
+        <ComboBox x:Name="cbGenderType" Margin="10">
         </ComboBox>
         <Label Margin="10,0" Content="{x:Static lang:Resources.ChooseLang}"/>
-        <ComboBox Margin="10" x:Name="cbLanguage" SelectionChanged="cbLanguage_SelectionChanged">
+        <ComboBox Margin="10" x:Name="cbLanguage">
             <ComboBoxItem>EN</ComboBoxItem>
             <ComboBoxItem>HR</ComboBoxItem>
         </ComboBox>
-        <Label Margin="10,0">Resolution</Label>
-        <ComboBox Margin="10" x:Name="cbResolution" SelectionChanged="cbResolution_SelectionChanged">
+        <Label Content="{x:Static lang:Resources.Resolution}" Margin="10,0"></Label>
+        <ComboBox Margin="10"  x:Name="cbResolution">
             <ComboBoxItem Content="{x:Static lang:Resources.ResSmall}"></ComboBoxItem>
             <ComboBoxItem Content="{x:Static lang:Resources.ResMedium}"></ComboBoxItem>
             <ComboBoxItem Content="{x:Static lang:Resources.Fullscreen}"></ComboBoxItem>

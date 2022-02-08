@@ -1,0 +1,27 @@
+﻿<Window x:Class="WorldCupWPF.ConfirmExitDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WorldCupWPF"
+        xmlns:lang="clr-namespace:WorldCupWPF.Properties"
+        mc:Ignorable="d"
+        Title="ConfirmExitDialog" Height="150" Width="300" KeyDown="Window_KeyDown">
+    <StackPanel Margin="20">
+        <Label HorizontalAlignment="Center" VerticalAlignment="Center" Content="{x:Static lang:Resources.Do_you_wish_to_exit_from_app}"></Label>
+        <Grid Margin="0 20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnNo" Margin="0 0 10 0" Grid.Row="0" Grid.Column="0" Click="btnNo_Click" Content="{x:Static lang:Resources.No}"></Button>
+            <Button x:Name="btnYes" Margin="10 0 0 0" Grid.Row="0"  Grid.Column="1" Click="btnYes_Click" Content="{x:Static lang:Resources.Yes}"></Button>
+        </Grid>
+    </StackPanel>
+</Window>

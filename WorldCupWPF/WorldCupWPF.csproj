@@ -56,12 +56,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ConfirmExitDialog.xaml.cs">
+      <DependentUpon>ConfirmExitDialog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="InitWindow.xaml.cs">
       <DependentUpon>InitWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="NationDetailsWindow.xaml.cs">
       <DependentUpon>NationDetailsWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="ConfirmExitDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="InitWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -86,10 +93,17 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="PlayerStatWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="PlayerGridItem.xaml.cs">
       <DependentUpon>PlayerGridItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PlayerStatWindow.xaml.cs">
+      <DependentUpon>PlayerStatWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

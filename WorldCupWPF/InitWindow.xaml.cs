@@ -1,19 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Globalization;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using WorldCupLibrary.Dal;
 using WorldCupLibrary.Models;
-using WorldCupLibrary.Models.Nation;
+
 
 namespace WorldCupWPF
 {
@@ -29,79 +21,70 @@ namespace WorldCupWPF
 
         public InitWindow()
         {
-            InitializeComponent();
-            InitCbGenderType();
-            InitDataConfig();
             
+            ConfigFactory configFactory = new ConfigFactory();
+            if (configFactory.CheckDataConfig())
+            {
+                dataConfig = configFactory.LoadDataConfig();
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(dataConfig.Culture.ToString());
 
+            }
+
+            InitializeComponent();
+            InitDataConfig();
         }
 
         private void InitDataConfig()
         {
-            cbGenderType.Items.Add("female");
-            cbGenderType.Items.Add("male");
-            if (configFactory.CheckDataConfig())
-            {
-                dataConfig = configFactory.LoadDataConfig();
+            cbGenderType.Items.Add(Properties.Resources.Female);
+            cbGenderType.Items.Add(Properties.Resources.Male);
+           
 
-                if (dataConfig.TeamGender == TeamGender.female) cbGenderType.SelectedIndex = 0;
-                else cbGenderType.SelectedIndex = 1;
-            }
-            cbGenderType.SelectedIndex = 0;
+                if (dataConfig.TeamGender == TeamGender.female) cbGenderType.SelectedIndex = 1;
+                else cbGenderType.SelectedIndex = 2;
+
+                if (dataConfig.Culture == Culture.hr) cbLanguage.SelectedIndex = 2;
+                else cbLanguage.SelectedIndex = 1;
+            
+            
 
             selectedNation = configFactory.LoadFavNation();
         }
 
-        private void InitCbGenderType()
-        {
-            
-        }
-
-        private async void initNationAsync()
-        {
-           
-            nations = await WorldCupDataFactory.GetData.GetNations(dataConfig.TeamGender);
-
-            //await FillDdl();
-           
-
-        }
-
         
-
-
         private void btnConfirm_Click(object sender, RoutedEventArgs e)
         {
+            if (cbGenderType.SelectedIndex == 1) dataConfig.TeamGender = TeamGender.female;
+            else dataConfig.TeamGender = TeamGender.male;
+
+
+            if (cbLanguage.SelectedItem.ToString() == "EN") dataConfig.Culture = Culture.en;
+            else dataConfig.Culture = Culture.hr;
+
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(dataConfig.Culture.ToString());
+
+            if (cbResolution.SelectedIndex == 0)
+            {
+                dataConfig.Resolution = Resolution.small;
+            }
+            else if (cbResolution.SelectedIndex == 1)
+            {
+                dataConfig.Resolution = Resolution.medium;
+            }
+            else if (cbResolution.SelectedIndex == 2)
+            {
+                dataConfig.Resolution = Resolution.fullscreen;
+            }
+
+            configFactory.SaveDataConfig(dataConfig);
+
+            new MainWindow().Show();
             this.Close();
         }
 
-        private void cbNation_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
 
-        private void cbGenderType_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (cbGenderType.SelectedIndex == 0) dataConfig.TeamGender = TeamGender.female;
-            else dataConfig.TeamGender = TeamGender.male;
+        
 
-            initNationAsync();
-        }
-
-        private void cbResolution_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            
-            
-        }
-
-        private void cbLanguage_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+        
     }
 }

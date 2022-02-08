@@ -6,7 +6,7 @@
 //
 //    var nation = Nation.FromJson(jsonString);
 
-namespace WorldCupLibrary.Models.Nation
+namespace WorldCupLibrary.Models
 {
     using System;
     using System.Collections.Generic;

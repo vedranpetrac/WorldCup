@@ -117,139 +117,76 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
   <data name="Captain" xml:space="preserve">
-    <value>CAPTAIN:</value>
-  </data>
-  <data name="captainNo" xml:space="preserve">
-    <value>No</value>
-  </data>
-  <data name="captainYes" xml:space="preserve">
-    <value>Yes</value>
+    <value>Kapetan</value>
   </data>
   <data name="ChooseGender" xml:space="preserve">
-    <value>Choose Gender</value>
+    <value>Odaberi prvenstvo</value>
   </data>
   <data name="ChooseLang" xml:space="preserve">
-    <value>Choose language</value>
-  </data>
-  <data name="CloseAppConfContent" xml:space="preserve">
-    <value>Are you sure?</value>
+    <value>Odaberi jezik</value>
   </data>
   <data name="Confirm" xml:space="preserve">
-    <value>Confirm</value>
+    <value>Potvrdi</value>
   </data>
-  <data name="ConfirmSettings" xml:space="preserve">
-    <value>Open the application</value>
+  <data name="Do you wish to exit from app" xml:space="preserve">
+    <value>Želite li izaći iz aplikacije?</value>
   </data>
-  <data name="Defeats" xml:space="preserve">
-    <value>DEFEATS:</value>
-  </data>
-  <data name="Defender" xml:space="preserve">
-    <value>Defender</value>
-  </data>
-  <data name="Draws" xml:space="preserve">
-    <value>DRAWS:</value>
-  </data>
-  <data name="ErrorDataFetch" xml:space="preserve">
-    <value>Error while fetching data</value>
-  </data>
-  <data name="FavouriteTeam" xml:space="preserve">
-    <value>Favourite team:</value>
+  <data name="Favourite Team" xml:space="preserve">
+    <value>Favorit</value>
   </data>
   <data name="Female" xml:space="preserve">
-    <value>Female</value>
+    <value>Žensko</value>
   </data>
-  <data name="FifaCode" xml:space="preserve">
-    <value>FIFA CODE:</value>
-  </data>
-  <data name="Forward" xml:space="preserve">
-    <value>Forward</value>
+  <data name="Fifa code" xml:space="preserve">
+    <value>Fifa kod</value>
   </data>
   <data name="Fullscreen" xml:space="preserve">
-    <value>Fullscreen</value>
-  </data>
-  <data name="GamesPlayed" xml:space="preserve">
-    <value>GAMES PLAYED:</value>
-  </data>
-  <data name="GoalDiff" xml:space="preserve">
-    <value>GOAL DIFFERENCE:</value>
-  </data>
-  <data name="Goalie" xml:space="preserve">
-    <value>Goalie</value>
+    <value>Velika</value>
   </data>
   <data name="Goals" xml:space="preserve">
-    <value>GOALS:</value>
+    <value>Golovi</value>
   </data>
-  <data name="GoalsAgainst" xml:space="preserve">
-    <value>GOALS AGAINST:</value>
+  <data name="Goals hit/get/diffrence" xml:space="preserve">
+    <value>Golova zabijenih/primljenih/razlika</value>
   </data>
-  <data name="GoalsFor" xml:space="preserve">
-    <value>GOALS FOR:</value>
-  </data>
-  <data name="InitialSettings" xml:space="preserve">
-    <value>Initial settings</value>
-  </data>
-  <data name="langCro" xml:space="preserve">
-    <value>Croatian</value>
-  </data>
-  <data name="langEn" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="Loading" xml:space="preserve">
-    <value>Loading content...</value>
-  </data>
-  <data name="male" xml:space="preserve">
-    <value>Male</value>
-  </data>
-  <data name="Midfield" xml:space="preserve">
-    <value>Midfield</value>
+  <data name="Male" xml:space="preserve">
+    <value>Muško</value>
   </data>
   <data name="Name" xml:space="preserve">
-    <value>NAME:</value>
+    <value>Naziv</value>
   </data>
-  <data name="NationStat" xml:space="preserve">
-    <value>Country statistics</value>
+  <data name="No" xml:space="preserve">
+    <value>NE</value>
   </data>
-  <data name="Opponet" xml:space="preserve">
-    <value>Opponent</value>
+  <data name="Number of played/wins/lost/even" xml:space="preserve">
+    <value>Broj odigranih/pobjeda/poraza/neodlučenih</value>
   </data>
-  <data name="PlayerStat" xml:space="preserve">
-    <value>Player statistics</value>
+  <data name="Oppon team" xml:space="preserve">
+    <value>Protivnik</value>
+  </data>
+  <data name="PlayerNum" xml:space="preserve">
+    <value>Broj igraca</value>
   </data>
   <data name="Position" xml:space="preserve">
-    <value>POSITION:</value>
-  </data>
-  <data name="ResLarge" xml:space="preserve">
-    <value>Large</value>
+    <value>Pozicija</value>
   </data>
   <data name="ResMedium" xml:space="preserve">
-    <value>Medium</value>
+    <value>Srednja</value>
+  </data>
+  <data name="Resolution" xml:space="preserve">
+    <value>Rezolucija</value>
   </data>
   <data name="ResSmall" xml:space="preserve">
-    <value>Small</value>
-  </data>
-  <data name="SaveSettings" xml:space="preserve">
-    <value>Save settings</value>
+    <value>Mala</value>
   </data>
   <data name="Settings" xml:space="preserve">
-    <value>Settings</value>
+    <value>Postavke</value>
   </data>
-  <data name="ShirtNumber" xml:space="preserve">
-    <value>SHIRT NUMBER:</value>
+  <data name="YellowCards" xml:space="preserve">
+    <value>Žuti kartoni</value>
   </data>
-  <data name="ShowMain" xml:space="preserve">
-    <value>Show main window</value>
-  </data>
-  <data name="TeamDisplay" xml:space="preserve">
-    <value>Team</value>
-  </data>
-  <data name="Wins" xml:space="preserve">
-    <value>WINS:</value>
-  </data>
-  <data name="YellowCard" xml:space="preserve">
-    <value>YELLOW CARDS:</value>
+  <data name="Yes" xml:space="preserve">
+    <value>DA</value>
   </data>
 </root>

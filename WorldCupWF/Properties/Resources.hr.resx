@@ -117,4 +117,94 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Away Team" xml:space="preserve">
+    <value>Strani tim</value>
+  </data>
+  <data name="Captain" xml:space="preserve">
+    <value>Kapetan</value>
+  </data>
+  <data name="Confirm Options" xml:space="preserve">
+    <value>Potvrdi odabir</value>
+  </data>
+  <data name="Cup Gender" xml:space="preserve">
+    <value>Tip prvenstva</value>
+  </data>
+  <data name="Do you want to close app" xml:space="preserve">
+    <value>Želite li zatvoriti aplikaciju?</value>
+  </data>
+  <data name="Done" xml:space="preserve">
+    <value>Učitano</value>
+  </data>
+  <data name="Favourite Players" xml:space="preserve">
+    <value>Najdraži igrači</value>
+  </data>
+  <data name="Favourite Team" xml:space="preserve">
+    <value>Najdraži tim</value>
+  </data>
+  <data name="Female" xml:space="preserve">
+    <value>Žensko</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>Puno ime</value>
+  </data>
+  <data name="Goals" xml:space="preserve">
+    <value>Golovi</value>
+  </data>
+  <data name="Home Team" xml:space="preserve">
+    <value>Domaći tim</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Jezik</value>
+  </data>
+  <data name="Load Image" xml:space="preserve">
+    <value>Učitaj fotografiju</value>
+  </data>
+  <data name="Loading" xml:space="preserve">
+    <value>Učitavanje...</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Lokacija</value>
+  </data>
+  <data name="Male" xml:space="preserve">
+    <value>Muško</value>
+  </data>
+  <data name="Matches Played" xml:space="preserve">
+    <value>Odigrane utakmice</value>
+  </data>
+  <data name="Matches Rang List" xml:space="preserve">
+    <value>Rang lista utakmica</value>
+  </data>
+  <data name="Move To Fav" xml:space="preserve">
+    <value>Prebaci u najdraže</value>
+  </data>
+  <data name="Player Name" xml:space="preserve">
+    <value>Ime igrača</value>
+  </data>
+  <data name="Player Pictures" xml:space="preserve">
+    <value>Igračeva fotografija</value>
+  </data>
+  <data name="Players Rang List" xml:space="preserve">
+    <value>Rang lista igrača</value>
+  </data>
+  <data name="Print Details" xml:space="preserve">
+    <value>Ispiši detalje</value>
+  </data>
+  <data name="Remove from Fav" xml:space="preserve">
+    <value>Prebaci u ostale</value>
+  </data>
+  <data name="Saved Nation" xml:space="preserve">
+    <value>Odabir pohranjen</value>
+  </data>
+  <data name="Select Player" xml:space="preserve">
+    <value>Odaberi igrača</value>
+  </data>
+  <data name="Select Your Favourite Team From Dropdown" xml:space="preserve">
+    <value>Odaberite najdraži tim</value>
+  </data>
+  <data name="Visitors" xml:space="preserve">
+    <value>Posjetitelji</value>
+  </data>
+  <data name="Yellow Cards" xml:space="preserve">
+    <value>Žuti kartoni</value>
+  </data>
 </root>

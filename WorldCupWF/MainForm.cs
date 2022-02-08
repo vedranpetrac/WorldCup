@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -12,7 +13,6 @@ using System.Windows.Forms;
 using WorldCupLibrary.Dal;
 using WorldCupLibrary.Models;
 using WorldCupLibrary.Models.Match;
-using WorldCupLibrary.Models.Nation;
 using WorldCupWF.CustomUserControl;
 using WorldCupWF.Model;
 using WorldCupWF.Properties;
@@ -37,16 +37,6 @@ namespace WorldCupWF
             InitializeComponent();
 
 
-
-            /*
-            Player player = new Player { FullName = "Ivan Horvat", Position = "Napadac", Number = "99" };
-
-            FavouritePlayerItemUC favouritePlayerItemUC = new FavouritePlayerItemUC(player);
-
-            favouritePlayerUC1.AddPlayersToList(favouritePlayerItemUC);
-            */
-
-
         }
 
         
@@ -55,20 +45,40 @@ namespace WorldCupWF
         {
             configFactory = new ConfigFactory();
             dataConfig = configFactory.LoadDataConfig();
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(dataConfig.Culture.ToString());
 
+            lbSelectFavTeam.Text = Properties.Resources.Select_Your_Favourite_Team_From_Dropdown;
+            btnSaveNation.Text = Properties.Resources.Confirm_Options;
+            lblSelectPlayer.Text = Properties.Resources.Select_Player;
+            lblPictureBoxName.Text = Properties.Resources.Player_Name;
+            printMatchesDataGrid.Text = Properties.Resources.Print_Details;
+            tabPage4.Text = Properties.Resources.Favourite_Team;
+            tabPage1.Text = Properties.Resources.Favourite_Players;
+            tabPage2.Text = Properties.Resources.Player_Pictures;
+            tabPage5.Text = Properties.Resources.Matches_Rang_List;
+            tabPlayerRang.Text = Properties.Resources.Players_Rang_List;
 
+            dataGridPlayers.Columns[0].HeaderText = Properties.Resources.FullName;
+            dataGridPlayers.Columns[1].HeaderText = Properties.Resources.Goals;
+            dataGridPlayers.Columns[2].HeaderText = Properties.Resources.Yellow_Cards;
+
+            dataGridMatches.Columns[0].HeaderText = Properties.Resources.Location;
+            dataGridMatches.Columns[1].HeaderText = Properties.Resources.Visitors;
+            dataGridMatches.Columns[2].HeaderText = Properties.Resources.Home_Team;
+            dataGridMatches.Columns[3].HeaderText = Properties.Resources.Away_Team;
+
+            
         }
 
         private async void initNationAsync()
         {
             inProgress = true;
 
-            lbLoadingNations.Text = "Loading...";
+            lbLoadingNations.Text = Properties.Resources.Loading;
             lbLoadingNations.ForeColor = Color.Red;
             nations = await WorldCupDataFactory.GetData.GetNations(dataConfig.TeamGender);
-
             await FillDdl();
-            lbLoadingNations.Text = "Done";
+            lbLoadingNations.Text = Properties.Resources.Done;
             lbLoadingNations.ForeColor = Color.Green;
             inProgress = false;
 
@@ -90,6 +100,7 @@ namespace WorldCupWF
 
             
             favouritePlayersUC.AddPlayersToList(playersList);
+
             initDataGridMatches();
 
         }
@@ -97,6 +108,9 @@ namespace WorldCupWF
         private void initDataGridMatches()
         {
             dataGridMatches.Rows.Clear();
+
+            
+            //dataGridMatches.Columns[0].Name;
 
             foreach (var match in nationMatchesList)
             {
@@ -147,7 +161,7 @@ namespace WorldCupWF
             {
                 selectedNation = nations[cbNations.SelectedIndex];
                 configFactory.SaveFavNation(selectedNation);
-                lbLoadingNations.Text = "Favourite nation saved.";
+                lbLoadingNations.Text = Properties.Resources.Saved_Nation; ;
                 configFactory.SaveFavNation(selectedNation);
                 initNationMatchesAsync(dataConfig.TeamGender, selectedNation);
 
@@ -167,11 +181,37 @@ namespace WorldCupWF
                     playerImage = new Bitmap(player.PicturePath);
                     playerPictureBox.Image = playerImage;
                 }
+                else
+                {
+                    playerPictureBox.Image = Properties.Resources.blank_profile_picture;
+                }
             }
             
         }
 
+        private void btnLoadPlayerImg_Click(object sender, EventArgs e)
+        {
+            if (playersBoxPictures.Items.Count != 0)
+            {
+                StartingEleven player = playersList[playersBoxPictures.SelectedIndex];
+                if (openImageDialog.ShowDialog() == DialogResult.OK)
+                {
+                    player.PicturePath = openImageDialog.FileName;
+                    playerImage = new Bitmap(player.PicturePath);
+                    playerPictureBox.Image = playerImage;
+
+                }
+            }
+
+
+        }
+
         private void printMatchesDataGrid_Click(object sender, EventArgs e)
+        {
+            printPreviewDialogMatches.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
         {
             printPreviewDialogMatches.ShowDialog();
         }
@@ -192,24 +232,64 @@ namespace WorldCupWF
             e.Graphics.DrawImage(bmp, new Point { X = e.MarginBounds.X, Y = e.MarginBounds.Y });
         }
 
-        private void btnLoadPlayerImg_Click(object sender, EventArgs e)
+        private void printDocumentPlayers_PrintPage(object sender, PrintPageEventArgs e)
         {
-            if (playersBoxPictures.Items.Count != 0)
+            Bitmap bmp = new Bitmap(this.Width, this.Height);
+
+            this.DrawToBitmap(bmp, new Rectangle
             {
-                StartingEleven player = playersList[playersBoxPictures.SelectedIndex];
-                if (openImageDialog.ShowDialog() == DialogResult.OK)
+                X = 0,
+                Y = 0,
+
+                Width = this.Width,
+                Height = this.Height
+
+            });
+            
+            e.Graphics.DrawImage(bmp, new Point { X = e.MarginBounds.X, Y = e.MarginBounds.Y });
+        }
+
+        
+
+        private void initplayerEvevents(List<StartingEleven> team, List<Match> matches)
+        {
+            foreach (Match match in matches)
+            {
+                foreach (TeamEvent teamEvent in match.HomeTeamEvents)
                 {
-                    player.PicturePath = openImageDialog.FileName;
-                    playerImage = new Bitmap(player.PicturePath);
-                    playerPictureBox.Image = playerImage;
+                    fillPlayerStat(teamEvent, team);
+                }
+
+                foreach (TeamEvent teamEvent in match.AwayTeamEvents)
+                {
+                    fillPlayerStat(teamEvent, team);
                 }
             }
+        }
 
-           
+        private void fillPlayerStat(TeamEvent teamEvent, List<StartingEleven> team)
+        {
+            foreach (StartingEleven player in team)
+            {
+                if (player.Name == teamEvent.Player)
+                {
+                    if (teamEvent.TypeOfEvent == "yellow-card")
+                    {
+                        player.YellowCard++;
+
+                    }
+                    else if (teamEvent.TypeOfEvent == "goal" || teamEvent.TypeOfEvent == "goal-penalty")
+                    {
+                        player.Hit++; ;
+                    }
+                }
+            }
         }
 
         private void tabPlayerRang_Click(object sender, EventArgs e)
         {
+            
+
             if (playersList != null)
             {
                 foreach (var player in playersList)
@@ -217,13 +297,13 @@ namespace WorldCupWF
                     if (player.PicturePath != null)
                     {
                         playerImage = new Bitmap(player.PicturePath);
-                        dataGridPlayers.Rows.Add(playerImage, player.Name);
                     }
                     else
                     {
-                        dataGridPlayers.Rows.Add(player.PicturePath, player.Name);
-                    }
+                        playerImage = Properties.Resources.blank_profile_picture;
 
+                    }
+                    dataGridPlayers.Rows.Add(playerImage, player.Name, player.Hit, player.YellowCard);
                 }
             }
         }
@@ -237,16 +317,36 @@ namespace WorldCupWF
                     if (player.PicturePath != null)
                     {
                         playerImage = new Bitmap(player.PicturePath);
-                        dataGridPlayers.Rows.Add(playerImage, player.Name);
                     }
                     else
                     {
-                        dataGridPlayers.Rows.Add(player.PicturePath, player.Name);
-                        
-                    }
+                        playerImage = Properties.Resources.blank_profile_picture;
 
+                    }
+                    dataGridPlayers.Rows.Add(playerImage, player.Name, player.Hit, player.YellowCard);
                 }
             }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            dataConfig.FavNation = selectedNation;
+            dataConfig.FavNationPlayers = playersList;
+            configFactory.SaveDataConfig(dataConfig);
+
+
+            var dialogRes = ConfirmExitDialog.ShowDialog(this,"confirm exit");
+            if (dialogRes == DialogResult.No) e.Cancel = true;
+
+            else if (dialogRes == DialogResult.Yes) e.Cancel = false;
+ 
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+           
+            new InitForm().ShowDialog();
+            
         }
     }
 }

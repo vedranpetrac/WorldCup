@@ -61,38 +61,11 @@ namespace WorldCupWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Cancel.
-        /// </summary>
-        public static string Cancel {
-            get {
-                return ResourceManager.GetString("Cancel", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to CAPTAIN:.
+        ///   Looks up a localized string similar to Captain.
         /// </summary>
         public static string Captain {
             get {
                 return ResourceManager.GetString("Captain", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to No.
-        /// </summary>
-        public static string captainNo {
-            get {
-                return ResourceManager.GetString("captainNo", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Yes.
-        /// </summary>
-        public static string captainYes {
-            get {
-                return ResourceManager.GetString("captainYes", resourceCulture);
             }
         }
         
@@ -106,20 +79,11 @@ namespace WorldCupWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Choose language.
+        ///   Looks up a localized string similar to Choose Language.
         /// </summary>
         public static string ChooseLang {
             get {
                 return ResourceManager.GetString("ChooseLang", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Are you sure?.
-        /// </summary>
-        public static string CloseAppConfContent {
-            get {
-                return ResourceManager.GetString("CloseAppConfContent", resourceCulture);
             }
         }
         
@@ -133,56 +97,20 @@ namespace WorldCupWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Open the application.
+        ///   Looks up a localized string similar to Do you wish to exit from app.
         /// </summary>
-        public static string ConfirmSettings {
+        public static string Do_you_wish_to_exit_from_app {
             get {
-                return ResourceManager.GetString("ConfirmSettings", resourceCulture);
+                return ResourceManager.GetString("Do you wish to exit from app", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DEFEATS:.
+        ///   Looks up a localized string similar to Favourite Team.
         /// </summary>
-        public static string Defeats {
+        public static string Favourite_Team {
             get {
-                return ResourceManager.GetString("Defeats", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Defender.
-        /// </summary>
-        public static string Defender {
-            get {
-                return ResourceManager.GetString("Defender", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to DRAWS:.
-        /// </summary>
-        public static string Draws {
-            get {
-                return ResourceManager.GetString("Draws", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Error while fetching data.
-        /// </summary>
-        public static string ErrorDataFetch {
-            get {
-                return ResourceManager.GetString("ErrorDataFetch", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Favourite team:.
-        /// </summary>
-        public static string FavouriteTeam {
-            get {
-                return ResourceManager.GetString("FavouriteTeam", resourceCulture);
+                return ResourceManager.GetString("Favourite Team", resourceCulture);
             }
         }
         
@@ -206,20 +134,11 @@ namespace WorldCupWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to FIFA CODE:.
+        ///   Looks up a localized string similar to Fifa code.
         /// </summary>
-        public static string FifaCode {
+        public static string Fifa_code {
             get {
-                return ResourceManager.GetString("FifaCode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Forward.
-        /// </summary>
-        public static string Forward {
-            get {
-                return ResourceManager.GetString("Forward", resourceCulture);
+                return ResourceManager.GetString("Fifa code", resourceCulture);
             }
         }
         
@@ -233,34 +152,7 @@ namespace WorldCupWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GAMES PLAYED:.
-        /// </summary>
-        public static string GamesPlayed {
-            get {
-                return ResourceManager.GetString("GamesPlayed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to GOAL DIFFERENCE:.
-        /// </summary>
-        public static string GoalDiff {
-            get {
-                return ResourceManager.GetString("GoalDiff", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Goalie.
-        /// </summary>
-        public static string Goalie {
-            get {
-                return ResourceManager.GetString("Goalie", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to GOALS:.
+        ///   Looks up a localized string similar to Goals.
         /// </summary>
         public static string Goals {
             get {
@@ -269,79 +161,25 @@ namespace WorldCupWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GOALS AGAINST:.
+        ///   Looks up a localized string similar to Goals hit/get/diffrence.
         /// </summary>
-        public static string GoalsAgainst {
+        public static string Goals_hit_get_diffrence {
             get {
-                return ResourceManager.GetString("GoalsAgainst", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to GOALS FOR:.
-        /// </summary>
-        public static string GoalsFor {
-            get {
-                return ResourceManager.GetString("GoalsFor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Initial settings.
-        /// </summary>
-        public static string InitialSettings {
-            get {
-                return ResourceManager.GetString("InitialSettings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Croatian.
-        /// </summary>
-        public static string langCro {
-            get {
-                return ResourceManager.GetString("langCro", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to English.
-        /// </summary>
-        public static string langEn {
-            get {
-                return ResourceManager.GetString("langEn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Loading content....
-        /// </summary>
-        public static string Loading {
-            get {
-                return ResourceManager.GetString("Loading", resourceCulture);
+                return ResourceManager.GetString("Goals hit/get/diffrence", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Male.
         /// </summary>
-        public static string male {
+        public static string Male {
             get {
-                return ResourceManager.GetString("male", resourceCulture);
+                return ResourceManager.GetString("Male", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Midfield.
-        /// </summary>
-        public static string Midfield {
-            get {
-                return ResourceManager.GetString("Midfield", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to NAME:.
+        ///   Looks up a localized string similar to Name.
         /// </summary>
         public static string Name {
             get {
@@ -350,34 +188,43 @@ namespace WorldCupWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Country statistics.
+        ///   Looks up a localized string similar to No.
         /// </summary>
-        public static string NationStat {
+        public static string No {
             get {
-                return ResourceManager.GetString("NationStat", resourceCulture);
+                return ResourceManager.GetString("No", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Opponent.
+        ///   Looks up a localized string similar to Number of played/wins/lost/even.
         /// </summary>
-        public static string Opponet {
+        public static string Number_of_played_wins_lost_even {
             get {
-                return ResourceManager.GetString("Opponet", resourceCulture);
+                return ResourceManager.GetString("Number of played/wins/lost/even", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Player statistics.
+        ///   Looks up a localized string similar to Oppon team.
         /// </summary>
-        public static string PlayerStat {
+        public static string Oppon_team {
             get {
-                return ResourceManager.GetString("PlayerStat", resourceCulture);
+                return ResourceManager.GetString("Oppon team", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to POSITION:.
+        ///   Looks up a localized string similar to Player Number.
+        /// </summary>
+        public static string PlayerNum {
+            get {
+                return ResourceManager.GetString("PlayerNum", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Position.
         /// </summary>
         public static string Position {
             get {
@@ -386,16 +233,7 @@ namespace WorldCupWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Large.
-        /// </summary>
-        public static string ResLarge {
-            get {
-                return ResourceManager.GetString("ResLarge", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Medium.
+        ///   Looks up a localized string similar to ResMedium.
         /// </summary>
         public static string ResMedium {
             get {
@@ -404,20 +242,20 @@ namespace WorldCupWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Small.
+        ///   Looks up a localized string similar to Resolution.
         /// </summary>
-        public static string ResSmall {
+        public static string Resolution {
             get {
-                return ResourceManager.GetString("ResSmall", resourceCulture);
+                return ResourceManager.GetString("Resolution", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save settings.
+        ///   Looks up a localized string similar to ResSmall.
         /// </summary>
-        public static string SaveSettings {
+        public static string ResSmall {
             get {
-                return ResourceManager.GetString("SaveSettings", resourceCulture);
+                return ResourceManager.GetString("ResSmall", resourceCulture);
             }
         }
         
@@ -431,47 +269,20 @@ namespace WorldCupWPF.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SHIRT NUMBER:.
+        ///   Looks up a localized string similar to Yellow Cards.
         /// </summary>
-        public static string ShirtNumber {
+        public static string YellowCards {
             get {
-                return ResourceManager.GetString("ShirtNumber", resourceCulture);
+                return ResourceManager.GetString("YellowCards", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show main window.
+        ///   Looks up a localized string similar to Yes.
         /// </summary>
-        public static string ShowMain {
+        public static string Yes {
             get {
-                return ResourceManager.GetString("ShowMain", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Team.
-        /// </summary>
-        public static string TeamDisplay {
-            get {
-                return ResourceManager.GetString("TeamDisplay", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to WINS:.
-        /// </summary>
-        public static string Wins {
-            get {
-                return ResourceManager.GetString("Wins", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to YELLOW CARDS:.
-        /// </summary>
-        public static string YellowCard {
-            get {
-                return ResourceManager.GetString("YellowCard", resourceCulture);
+                return ResourceManager.GetString("Yes", resourceCulture);
             }
         }
     }

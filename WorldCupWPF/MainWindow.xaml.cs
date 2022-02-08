@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -15,7 +17,7 @@ using System.Windows.Shapes;
 using WorldCupLibrary.Dal;
 using WorldCupLibrary.Models;
 using WorldCupLibrary.Models.Match;
-using WorldCupLibrary.Models.Nation;
+
 
 namespace WorldCupWPF
 {
@@ -24,8 +26,8 @@ namespace WorldCupWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        DataConfig dataConfig = new DataConfig();
-        ConfigFactory configFactory = new ConfigFactory();
+        DataConfig dataConfig;
+        ConfigFactory configFactory;
         private List<Nation> nations;
         private List<Nation> oponNations;
         private Nation selectedNation;
@@ -37,23 +39,37 @@ namespace WorldCupWPF
 
         public MainWindow()
         {
+            InitDataConfig();
             InitializeComponent();
             this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            InitWindow initWindow = new InitWindow();
-            initWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            initWindow.Topmost = true;
-            initWindow.ShowDialog();
-            InitDataConfig();
-
-
-
 
         }
 
         private void InitDataConfig()
         {
+            configFactory = new ConfigFactory();
+            dataConfig = configFactory.LoadDataConfig();
+            selectedNation = dataConfig.FavNation;
+            nationPlayers = dataConfig.FavNationPlayers;
 
-            selectedNation = configFactory.LoadFavNation();
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(dataConfig.Culture.ToString());
+            Application.Current.MainWindow = this;
+            if (dataConfig.Resolution == Resolution.small)
+            {
+                Height = 600;
+                Width = 800;
+            }
+            else if (dataConfig.Resolution == Resolution.medium)
+            {
+                Height = 1000;
+                Width = 1200;
+            }
+            else if (dataConfig.Resolution == Resolution.fullscreen)
+            {
+                WindowState = WindowState.Maximized;
+            }
+            
+
         }
 
         private Task FillDdl()
@@ -64,8 +80,12 @@ namespace WorldCupWPF
             {
                 cbNation.Items.Add(nation.Country + "(" + nation.FifaCode + ")");
             }
-            int pos = nations.FindIndex(nation => nation.FifaCode == selectedNation.FifaCode);
-            cbNation.SelectedIndex = pos;
+            if(selectedNation != null)
+            {
+                int pos = nations.FindIndex(nation => nation.FifaCode == selectedNation.FifaCode);
+                cbNation.SelectedIndex = pos;
+            }
+            cbNation.SelectedIndex = 0;
             return Task.CompletedTask;
         }
 
@@ -138,6 +158,9 @@ namespace WorldCupWPF
                 nationDetailsWindow.WindowStartupLocation = WindowStartupLocation.CenterScreen;
                 nationDetailsWindow.Topmost = true;
                 nationDetailsWindow.ShowDialog();
+
+                initplayerEvevents(nationPlayers, selectedMatch);
+                initplayerEvevents(oponNationPlayers, selectedMatch);
             }
         }
 
@@ -251,6 +274,48 @@ namespace WorldCupWPF
             initWindow.Topmost = true;
             initWindow.ShowDialog();
             InitDataConfig();
+        }
+
+        private void initplayerEvevents(List<StartingEleven> team, Match match)
+        {
+            
+                foreach (TeamEvent teamEvent in match.HomeTeamEvents)
+                {
+                    fillPlayerStat(teamEvent, team);
+                }
+
+                foreach (TeamEvent teamEvent in match.AwayTeamEvents)
+                {
+                    fillPlayerStat(teamEvent, team);
+                }
+            
+        }
+
+        private void fillPlayerStat(TeamEvent teamEvent, List<StartingEleven> team)
+        {
+            foreach (StartingEleven player in team)
+            {
+                if (player.Name == teamEvent.Player)
+                {
+                    if (teamEvent.TypeOfEvent == "yellow-card")
+                    {
+                        player.YellowCard++;
+
+                    }
+                    else if (teamEvent.TypeOfEvent == "goal" || teamEvent.TypeOfEvent == "goal-penalty")
+                    {
+                        player.Hit++; ;
+                    }
+                }
+            }
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            configFactory.SaveFavNation(selectedNation);
+
+            new ConfirmExitDialog().ShowDialog();
+            e.Cancel = true;
         }
     }
 

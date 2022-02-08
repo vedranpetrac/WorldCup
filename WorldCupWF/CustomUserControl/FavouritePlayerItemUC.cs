@@ -14,7 +14,7 @@ namespace WorldCupWF.CustomUserControl
 {
     public partial class FavouritePlayerItemUC : UserControl
     {
-   
+        
 
         public FavouritePlayerItemUC(StartingEleven player)
         {
@@ -29,22 +29,23 @@ namespace WorldCupWF.CustomUserControl
                 captainCheck.Checked = true;
             }
 
-            favShow.Visible = player.Favourite;
-            
 
         }
 
-      
 
+        public void setFav(bool isFav) { 
+            favShow.Visible = isFav;
+           
+        }
 
         private void FavouritePlayerItemUC_Click(object sender, EventArgs e)
         {
-            this.BackColor = Color.AliceBlue;
+            //this.BackColor = Color.AliceBlue;
         }
 
         private void FavouritePlayerItemUC_MouseDown(object sender, MouseEventArgs e)
         {
-            this.BackColor = Color.AliceBlue;
+            //this.BackColor = Color.AliceBlue;
         }
     }
 }

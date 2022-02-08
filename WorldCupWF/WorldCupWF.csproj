@@ -74,6 +74,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiConstants.cs" />
+    <Compile Include="ConfirmExitDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConfirmExitDialog.Designer.cs">
+      <DependentUpon>ConfirmExitDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomUserControl\FavouritePlayerItemUC.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -105,8 +111,12 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\DataGridMatchesPrint.cs" />
+    <Compile Include="Model\DragDataModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConfirmExitDialog.resx">
+      <DependentUpon>ConfirmExitDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomUserControl\FavouritePlayerItemUC.resx">
       <DependentUpon>FavouritePlayerItemUC.cs</DependentUpon>
     </EmbeddedResource>

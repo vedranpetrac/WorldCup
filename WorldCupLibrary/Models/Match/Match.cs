@@ -123,7 +123,7 @@ namespace WorldCupLibrary.Models.Match
         [JsonProperty("substitutes")]
         public List<StartingEleven> Substitutes { get; set; }
     }
-
+    [Serializable]
     public partial class StartingEleven
     {
         [JsonProperty("name")]
@@ -140,6 +140,8 @@ namespace WorldCupLibrary.Models.Match
 
         public string PicturePath { get; set; }
         public bool Favourite { get; set; }
+        public int YellowCard { get; set; }
+        public int Hit { get; set; }
     }
 
     public enum Position { Defender, Forward, Goalie, Midfield };

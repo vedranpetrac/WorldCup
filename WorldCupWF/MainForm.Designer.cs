@@ -45,28 +45,29 @@
             this.dataGridPlayers = new System.Windows.Forms.DataGridView();
             this.playerDataGridImage = new System.Windows.Forms.DataGridViewImageColumn();
             this.playerDataGridName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.playerDataGridMatches = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.playerDataGridGoals = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.playerDataGridYellowCards = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lblPictureBoxName = new System.Windows.Forms.Label();
             this.playersBoxPictures = new System.Windows.Forms.ListBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblSelectPlayer = new System.Windows.Forms.Label();
             this.btnLoadPlayerImg = new System.Windows.Forms.Button();
             this.playerPictureBox = new System.Windows.Forms.PictureBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.favouritePlayersUC = new WorldCupWF.CustomUserControl.FavouritePlayersUC();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.lbLoadingNations = new System.Windows.Forms.Label();
             this.btnSaveNation = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbSelectFavTeam = new System.Windows.Forms.Label();
             this.cbNations = new System.Windows.Forms.ComboBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.printPreviewDialogMatches = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocumentMatches = new System.Drawing.Printing.PrintDocument();
+            this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
             this.startingElevenBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.startingElevenBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.openImageDialog = new System.Windows.Forms.OpenFileDialog();
-            this.favouritePlayersUC = new WorldCupWF.CustomUserControl.FavouritePlayersUC();
+            this.printDocumentPlayers = new System.Drawing.Printing.PrintDocument();
+            this.printDialogPlayers = new System.Windows.Forms.PrintDialog();
             this.menuStrip1.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMatches)).BeginInit();
@@ -99,6 +100,7 @@
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(61, 20);
             this.toolStripMenuItem1.Text = "Options";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // exitToolStripMenuItem
             // 
@@ -121,9 +123,9 @@
             // 
             // printMatchesDataGrid
             // 
-            this.printMatchesDataGrid.Location = new System.Drawing.Point(8, 41);
+            this.printMatchesDataGrid.Location = new System.Drawing.Point(196, 338);
             this.printMatchesDataGrid.Name = "printMatchesDataGrid";
-            this.printMatchesDataGrid.Size = new System.Drawing.Size(119, 23);
+            this.printMatchesDataGrid.Size = new System.Drawing.Size(443, 37);
             this.printMatchesDataGrid.TabIndex = 4;
             this.printMatchesDataGrid.Text = "Print Details";
             this.printMatchesDataGrid.UseVisualStyleBackColor = true;
@@ -137,9 +139,9 @@
             this.cVisitors,
             this.cHomeTeam,
             this.cAwayTeam});
-            this.dataGridMatches.Location = new System.Drawing.Point(8, 89);
+            this.dataGridMatches.Location = new System.Drawing.Point(196, 20);
             this.dataGridMatches.Name = "dataGridMatches";
-            this.dataGridMatches.Size = new System.Drawing.Size(776, 286);
+            this.dataGridMatches.Size = new System.Drawing.Size(443, 312);
             this.dataGridMatches.TabIndex = 2;
             // 
             // cLocation
@@ -182,12 +184,13 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(8, 43);
+            this.button4.Location = new System.Drawing.Point(132, 341);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(119, 23);
+            this.button4.Size = new System.Drawing.Size(545, 34);
             this.button4.TabIndex = 5;
             this.button4.Text = "Print Details";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dataGridPlayers
             // 
@@ -195,13 +198,13 @@
             this.dataGridPlayers.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.playerDataGridImage,
             this.playerDataGridName,
-            this.playerDataGridMatches,
             this.playerDataGridGoals,
             this.playerDataGridYellowCards});
-            this.dataGridPlayers.Location = new System.Drawing.Point(8, 91);
+            this.dataGridPlayers.Location = new System.Drawing.Point(132, 19);
             this.dataGridPlayers.Name = "dataGridPlayers";
             this.dataGridPlayers.ReadOnly = true;
-            this.dataGridPlayers.Size = new System.Drawing.Size(776, 286);
+            this.dataGridPlayers.RowHeadersWidth = 40;
+            this.dataGridPlayers.Size = new System.Drawing.Size(545, 316);
             this.dataGridPlayers.TabIndex = 0;
             // 
             // playerDataGridImage
@@ -216,13 +219,6 @@
             this.playerDataGridName.Name = "playerDataGridName";
             this.playerDataGridName.ReadOnly = true;
             this.playerDataGridName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // playerDataGridMatches
-            // 
-            this.playerDataGridMatches.HeaderText = "Matches Played";
-            this.playerDataGridMatches.Name = "playerDataGridMatches";
-            this.playerDataGridMatches.ReadOnly = true;
-            this.playerDataGridMatches.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // playerDataGridGoals
             // 
@@ -240,7 +236,7 @@
             // 
             this.tabPage2.Controls.Add(this.lblPictureBoxName);
             this.tabPage2.Controls.Add(this.playersBoxPictures);
-            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.lblSelectPlayer);
             this.tabPage2.Controls.Add(this.btnLoadPlayerImg);
             this.tabPage2.Controls.Add(this.playerPictureBox);
             this.tabPage2.Location = new System.Drawing.Point(4, 34);
@@ -269,15 +265,15 @@
             this.playersBoxPictures.TabIndex = 5;
             this.playersBoxPictures.Click += new System.EventHandler(this.playersBoxPictures_Click);
             // 
-            // label2
+            // lblSelectPlayer
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Select Player";
+            this.lblSelectPlayer.AutoSize = true;
+            this.lblSelectPlayer.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectPlayer.Location = new System.Drawing.Point(10, 13);
+            this.lblSelectPlayer.Name = "lblSelectPlayer";
+            this.lblSelectPlayer.Size = new System.Drawing.Size(101, 20);
+            this.lblSelectPlayer.TabIndex = 4;
+            this.lblSelectPlayer.Text = "Select Player";
             // 
             // btnLoadPlayerImg
             // 
@@ -297,6 +293,7 @@
             this.playerPictureBox.Location = new System.Drawing.Point(435, 27);
             this.playerPictureBox.Name = "playerPictureBox";
             this.playerPictureBox.Size = new System.Drawing.Size(349, 235);
+            this.playerPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.playerPictureBox.TabIndex = 0;
             this.playerPictureBox.TabStop = false;
             // 
@@ -311,11 +308,18 @@
             this.tabPage1.Text = "Favourite Players";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // favouritePlayersUC
+            // 
+            this.favouritePlayersUC.Location = new System.Drawing.Point(29, 19);
+            this.favouritePlayersUC.Name = "favouritePlayersUC";
+            this.favouritePlayersUC.Size = new System.Drawing.Size(730, 356);
+            this.favouritePlayersUC.TabIndex = 0;
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.lbLoadingNations);
             this.tabPage4.Controls.Add(this.btnSaveNation);
-            this.tabPage4.Controls.Add(this.label1);
+            this.tabPage4.Controls.Add(this.lbSelectFavTeam);
             this.tabPage4.Controls.Add(this.cbNations);
             this.tabPage4.Location = new System.Drawing.Point(4, 34);
             this.tabPage4.Name = "tabPage4";
@@ -328,10 +332,12 @@
             // 
             this.lbLoadingNations.AutoSize = true;
             this.lbLoadingNations.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLoadingNations.Location = new System.Drawing.Point(380, 61);
+            this.lbLoadingNations.Location = new System.Drawing.Point(230, 64);
+            this.lbLoadingNations.MinimumSize = new System.Drawing.Size(300, 0);
             this.lbLoadingNations.Name = "lbLoadingNations";
-            this.lbLoadingNations.Size = new System.Drawing.Size(0, 16);
+            this.lbLoadingNations.Size = new System.Drawing.Size(300, 16);
             this.lbLoadingNations.TabIndex = 3;
+            this.lbLoadingNations.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnSaveNation
             // 
@@ -344,15 +350,16 @@
             this.btnSaveNation.UseVisualStyleBackColor = true;
             this.btnSaveNation.Click += new System.EventHandler(this.btnSaveNation_Click);
             // 
-            // label1
+            // lbSelectFavTeam
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(218, 94);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(338, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Select your favorite team from dropdown:";
+            this.lbSelectFavTeam.AutoSize = true;
+            this.lbSelectFavTeam.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSelectFavTeam.Location = new System.Drawing.Point(184, 95);
+            this.lbSelectFavTeam.MinimumSize = new System.Drawing.Size(400, 0);
+            this.lbSelectFavTeam.Name = "lbSelectFavTeam";
+            this.lbSelectFavTeam.Size = new System.Drawing.Size(400, 20);
+            this.lbSelectFavTeam.TabIndex = 1;
+            this.lbSelectFavTeam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cbNations
             // 
@@ -398,6 +405,10 @@
             // 
             this.printDocumentMatches.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentMatches_PrintPage);
             // 
+            // openImageDialog
+            // 
+            this.openImageDialog.FileName = "openFileDialog1";
+            // 
             // startingElevenBindingSource
             // 
             this.startingElevenBindingSource.DataSource = typeof(WorldCupLibrary.Models.Match.StartingEleven);
@@ -406,16 +417,13 @@
             // 
             this.startingElevenBindingSource1.DataSource = typeof(WorldCupLibrary.Models.Match.StartingEleven);
             // 
-            // openImageDialog
+            // printDocumentPlayers
             // 
-            this.openImageDialog.FileName = "openFileDialog1";
+            this.printDocumentPlayers.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocumentPlayers_PrintPage);
             // 
-            // favouritePlayersUC
+            // printDialogPlayers
             // 
-            this.favouritePlayersUC.Location = new System.Drawing.Point(29, 19);
-            this.favouritePlayersUC.Name = "favouritePlayersUC";
-            this.favouritePlayersUC.Size = new System.Drawing.Size(730, 356);
-            this.favouritePlayersUC.TabIndex = 0;
+            this.printDialogPlayers.UseEXDialog = true;
             // 
             // MainForm
             // 
@@ -428,6 +436,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -459,14 +468,14 @@
         private System.Windows.Forms.DataGridView dataGridPlayers;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ListBox playersBoxPictures;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblSelectPlayer;
         private System.Windows.Forms.Button btnLoadPlayerImg;
         private System.Windows.Forms.PictureBox playerPictureBox;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Label lbLoadingNations;
         private System.Windows.Forms.Button btnSaveNation;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbSelectFavTeam;
         private System.Windows.Forms.ComboBox cbNations;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.DataGridView dataGridMatches;
@@ -474,11 +483,6 @@
         private System.Windows.Forms.Button printMatchesDataGrid;
         private System.Windows.Forms.Label lblPictureBoxName;
         private System.Windows.Forms.BindingSource startingElevenBindingSource1;
-        private System.Windows.Forms.DataGridViewImageColumn playerDataGridImage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn playerDataGridName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn playerDataGridMatches;
-        private System.Windows.Forms.DataGridViewTextBoxColumn playerDataGridGoals;
-        private System.Windows.Forms.DataGridViewTextBoxColumn playerDataGridYellowCards;
         private System.Windows.Forms.DataGridViewTextBoxColumn cLocation;
         private System.Windows.Forms.DataGridViewTextBoxColumn cVisitors;
         private System.Windows.Forms.DataGridViewTextBoxColumn cHomeTeam;
@@ -487,5 +491,11 @@
         private System.Drawing.Printing.PrintDocument printDocumentMatches;
         private CustomUserControl.FavouritePlayersUC favouritePlayersUC;
         private System.Windows.Forms.OpenFileDialog openImageDialog;
+        private System.Windows.Forms.DataGridViewImageColumn playerDataGridImage;
+        private System.Windows.Forms.DataGridViewTextBoxColumn playerDataGridName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn playerDataGridGoals;
+        private System.Windows.Forms.DataGridViewTextBoxColumn playerDataGridYellowCards;
+        private System.Drawing.Printing.PrintDocument printDocumentPlayers;
+        private System.Windows.Forms.PrintDialog printDialogPlayers;
     }
 }

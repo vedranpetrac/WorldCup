@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WorldCupLibrary;
@@ -17,9 +19,28 @@ namespace WorldCupWF
     {
         public InitForm()
         {
+            DataConfig dataConfig = new DataConfig();
+            ConfigFactory configFactory = new ConfigFactory();
+            if (configFactory.CheckDataConfig())
+            {
+                dataConfig = configFactory.LoadDataConfig();
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(dataConfig.Culture.ToString());
+
+            }
+
             InitializeComponent();
+
+            
+
+            lblGender.Text = Properties.Resources.Cup_Gender;
+            label1.Text = Properties.Resources.Language;
+            btnConfirm.Text = Properties.Resources.Confirm_Options;
+
             InitGenderTypeDdl();
             InitCultureTypeDdl();
+
+            if (dataConfig.Culture == Culture.hr) ddlCulture.SelectedIndex = 0;
+            if (dataConfig.TeamGender == TeamGender.male) ddlGenderType.SelectedIndex = 1;
         }
 
         private void InitCultureTypeDdl()
@@ -31,9 +52,9 @@ namespace WorldCupWF
 
         private void InitGenderTypeDdl()
         {
-            ddlGenderType.Items.Add("female");
-            ddlGenderType.Items.Add("male");
-            ddlGenderType.SelectedIndex = 0;
+            ddlGenderType.Items.Add(Properties.Resources.Female);
+            ddlGenderType.Items.Add(Properties.Resources.Male);
+            ddlGenderType.SelectedIndex = 1;
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -47,6 +68,8 @@ namespace WorldCupWF
 
             ConfigFactory configFactory = new ConfigFactory();
             configFactory.SaveDataConfig(dataConfig);
+
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(dataConfig.Culture.ToString());
 
             this.Close();
         }
